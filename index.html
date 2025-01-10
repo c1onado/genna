@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="description" content="¿Quieres crear un sitio web profesional sin complicaciones? Nosotros lo diseñamos y lo personalizamos a tu gusto. ¡Aumenta tu visibilidad en línea ahora mismo con tu nuevo y moderno sitio web!">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genna - Desarrollo web</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="media/images/favicongenna.webp">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body>
+  <header>
+    <nav class="bg-gradient-to-br pt-4 from-gray-800 to-black">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <button id="mobile-menu-button" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg id="menu-icon-open" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <svg id="menu-icon-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
+            <div class="flex shrink-0 items-center">
+              <a href="#inicio">
+                <img src="media/images/logogennawhite.webp" style="width:170px; height: 20px;" class="h-8 w-auto" alt="Genna Desarrollo Web">
+              </a>
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <a href="#inicio" class="px-8 py-2 border-b border-transparent font-medium text-gray-200 hover:text-white hover:border-b hover:border-white" aria-current="page">Inicio</a>
+                <a href="#sobre" class="px-8 py-2 font-medium text-gray-200 hover:text-white hover:border-b">Sobre</a>
+                <a href="#servicios" class="px-8 py-2 font-medium text-gray-200 hover:text-white hover:border-b">Servicios</a>
+                <a href="#contacto" class="px-8 py-2 font-medium text-gray-200 hover:text-white hover:border-b">Contacto</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Menú móvil -->
+      <div class="sm:hidden hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <a href="#inicio" class="block px-3 py-2 text-base font-medium text-gray-300" aria-current="page">Inicio</a>
+          <a href="#sobre" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white">Sobre</a>
+          <a href="#servicios" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white">Servicios</a>
+          <a href="#contacto" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white">Contacto</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Inicio -->
+    <section id="inicio">
+      <div class="overflow-hidden bg-gradient-to-tr from-gray-800 to-black py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div class="lg:pr-8 lg:pt-4">
+              <div class="lg:max-w-lg">
+                <h2 class="text-base font-semibold leading-7 text-slate-400">Desarrollo web a medida para tu negocio</h2>
+                <p class="mt-2 text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">Tu éxito online es nuestro objetivo</p>
+                <p class="mt-6 text-lg leading-8 text-slate-100">Impulsa tu negocio con un sitio web dinámico y funcional que te posicione como lider en tu sector y otorgue a tus clientes una experiencia digital inigualable.</br></br>¡Obten tu sitio web ahora!</p>
+                <div class="mt-10 flex items-center justify-center gap-x-4 lg:justify-start">
+                  <a href="#contacto" class="group inline-flex items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold disabled:cursor-not-allowed border-2 border-white bg-transparent text-white hover:bg-white hover:text-black h-[42px] min-w-[42px] disabled:bg-slate-100 disabled:stroke-slate-400 disabled:text-slate-400 disabled:hover:bg-slate-100 stroke-white px-6">Contactar ahora →</a>
+                  <a href="#servicios" class="group inline-flex items-center justify-center whitespace-nowrap align-middle h-[42px] min-w-[42px] px-4 text-sm font-semibold leading-6 text-slate-200 hover:text-white hover:underline">Ver servicios →</a>
+                </div>
+              </div>
+            </div>
+            <img src="media/images/gennaweb.webp" class="w-[48rem] max-w-none rounded-lg shadow-2xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0" style="width:1080px; height: 720px;" alt="Genna Sitio Web">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Sobre -->
+    <section id="sobre">
+      <div class="relative isolate overflow-hidden bg-gradient-to-br from-gray-800 to-black px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+          <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+            <div class="lg:pr-4">
+              <div class="lg:max-w-lg">
+                <p class="text-base/7 font-semibold text-slate-400">Destaca en internet</p>
+                <h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-slate-200 sm:text-5xl">Transformando ideas en sitios web únicos</h1>
+                <p class="mt-6 text-xl/8 text-slate-100">Desde sitios web estáticos hasta aplicaciones web dinámicas, diseñamos soluciones personalizadas para tus necesidades.</p>
+              </div>
+            </div>
+          </div>
+          <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+            <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src="media/images/desarrolloweb.webp" alt="Desarrollo Web">
+          </div>
+          <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+            <div class="lg:pr-4">
+              <div class="max-w-xl text-base/7 text-slate-100 lg:max-w-lg">
+                <p>Somos un equipo de desarrolladores apasionados por crear experiencias web únicas y personalizadas. Creamos diseños web que no solo son estéticamente atractivos, sino que también son fáciles de usar.</p>
+                <ul role="list" class="mt-8 space-y-8 text-slate-200">
+                  <li class="flex gap-x-3">
+                    <img class="mt-1 h-5 w-5 flex-none" src="media/icons/diseñoweb.webp"></img>
+                    <span><strong class="font-semibold text-white">Diseño Web Intuitivo.</strong> Nos enfocamos en la experiencia del usuario para garantizar que tus visitantes se conviertan en clientes.</span>
+                  </li>
+                  <li class="flex gap-x-3">
+                    <img class="mt-1 h-5 w-5 flex-none" src="media/icons/tecnologia.webp"></img>
+                    <span><strong class="font-semibold text-white">Tecnología de Vanguardia.</strong> Utilizamos las últimas tecnologías y herramientas de desarrollo para crear sitios web modernos y escalables.</span>
+                  </li>
+                  <li class="flex gap-x-3">
+                    <img class="mt-1 h-5 w-5 flex-none" src="media/icons/mantenimientoweb.webp"></img>
+                    <span><strong class="font-semibold text-white">Mantenimiento Web Proactivo.</strong> Aseguramos que tu sitio web siempre esté funcionando al máximo rendimiento.</span>
+                  </li>
+                </ul>
+                <p class="mt-8">Con un equipo de desarrolladores altamente capacitados y apasionados por lo que hacemos, garantizamos resultados de calidad.</p>
+                <h2 class="mt-16 text-2xl font-bold tracking-tight text-white">¡Digitaliza tu negocio hoy!</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Servicios -->
+    <section id="servicios">
+      <div class="bg-gradient-to-tl from-gray-800 to-black py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:text-center">
+            <h2 class="text-base/7 font-semibold text-slate-400">Un mundo digital de posibilidades</h2>
+            <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-balance">Nuestros Servicios</p>
+            <p class="mt-6 text-lg/8 text-slate-200">Desde pequeñas empresas hasta grandes corporaciones, tenemos la solución perfecta para ti.</p>
+          </div>
+          <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+              <div class="relative pl-16">
+                <dt class="text-base/7 font-semibold text-white">
+                  <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg">
+                    <img class="mt-1 h-5 w-5 flex-none" src="media/icons/desarrolloweb.webp" style="width: 50px; height: 40px;"></img>
+                  </div>
+                  Desarrollo Web
+                </dt>
+                <dd class="mt-2 text-base/7 text-slate-200">Creación de sitio web personalizado, dominio personalizado, hosting de alta velocidad, certificado SSL y optimización de SEO para que todos te encuentren en internet.</dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base/7 font-semibold text-white">
+                  <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg">
+                    <img class="mt-1 h-5 w-5 flex-none" src="media/icons/diseñografico.webp" style="width: 50px; height: 40px;"></img>
+                  </div>
+                  Diseño Web
+                </dt>
+                <dd class="mt-2 text-base/7 text-slate-200">Diseño de interfaces intuitivas y visualmente atractivas que facilitan la navegación y mejoran la experiencia del usuario, así como diseño de todos los componentes necesarios para tu sitio web.</dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base/7 font-semibold text-white">
+                  <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg">
+                    <img class="mt-1 h-5 w-5 flex-none" src="media/icons/diseñomarca.webp" style="width: 50px; height: 40px;"></img>
+                  </div>
+                  Diseño de Marca
+                </dt>
+                <dd class="mt-2 text-base/7 text-slate-200">Diseño de logotipo, rediseño de logo, banners, fotografías, entre otros muchos componentes para hacer que tu marca siempre destaque en tu sitio web.</dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base/7 font-semibold text-white">
+                  <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg">
+                    <img class="mt-1 h-5 w-5 flex-none" src="media/icons/mantenimientoweb.webp" style="width: 50px; height: 40px;"></img>
+                  </div>
+                  Mantenimiento Web
+                </dt>
+                <dd class="mt-2 text-base/7 text-slate-200">Aseguramos que tu sitio web siempre esté actualizado y funcionando al máximo rendimiento. Ofrecemos mantenimiento preventivo y correctivo, actualizaciones de seguridad y optimización.</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      
+    <!-- Contacto -->
+    <section id="contacto">
+      <div class="bg-gradient-to-bl from-gray-800 to-black py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto mb-20 max-w-2xl lg:text-center">
+            <h2 class="text-base/7 font-semibold text-slate-400">Presume tu sitio web</h2>
+            <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-balance">Contacto</p>
+            <p class="mt-6 text-lg/8 text-slate-200">Haz que tu negocio llegue a todo el mundo</p>
+          </div>
+
+          <div class="flex flex-col lg:flex-row gap-12">
+            <div class="flex flex-1 shadow bg-transparent flex-col items-start gap-6 px-6">
+
+              <h2 class="mb-2 text-lg text-white">Nuestros asesores estan listos para responder y resolver todas tus dudas, contáctanos a través de nuestros diferentes canales o llena el formulario de contacto para contactarte lo antes posible.</h2>
+              <ul class="max-w-md mt-8 space-y-1 text-white list-inside">
+                <li class="flex pb-4 items-center">
+                  <img class="mr-3" src="media/icons/mail.webp"></img>
+                  <a href="mail:genna.systems@proton.me" class="text-lg font-normal tracking-tight text-white sm:text-md">genna.systems@proton.me</a>
+                </li>
+                <li class="flex pb-4 items-center">
+                  <!-- WhatsApp -->
+                  <a href="https://wa.me/523330331797" target="_blank" class="text-white mr-3 hover:text-gray-300 transition duration-300">
+                    <img src="media/icons/whatsapp.webp"></img>
+                  </a>
+                  <a href="https://wa.me/523330331797" target="_blank" class="text-lg font-normal hover:underline tracking-tight text-white sm:text-md">33 3033 1797</a>
+                </li>
+                <li class="flex pb-4 items-center">
+                  <img class="mr-3" src="media/icons/phone.webp"></img>
+                  <a href="tel:+525664103419" class="text-lg font-normal tracking-tight text-white sm:text-md">56 6410 3419</a>
+                </li>
+                <li class="flex pb-4 items-center">
+                  <a href="https://www.instagram.com/genna.systems?igsh=MWlvY3AydmQxdTBueA%3D%3D&utm_source=qr" target="_blank" class="text-white mr-3 hover:text-gray-300 transition duration-300">
+                    <img src="media/icons/instagram.webp"></img>
+                  </a>
+                  <a href="https://www.instagram.com/genna.systems?igsh=MWlvY3AydmQxdTBueA%3D%3D&utm_source=qr" target="_blank" class="text-lg font-normal hover:underline tracking-tight text-white sm:text-md">@genna.systems</a>
+                </li>
+                <li class="flex pb-4 items-center">
+                  <a href="https://www.facebook.com/gennasystems" target="_blank" class="text-white mr-3 hover:text-gray-300 transition duration-300">
+                    <img src="media/icons/facebook.webp"></img>
+                  </a>
+                  <a href="https://www.facebook.com/gennasystems" target="_blank" class="text-lg font-normal hover:underline tracking-tight text-white sm:text-md">@gennasystems</a>
+                </li>
+                <li class="flex pb-4 items-center">
+                  <img class="mr-3" src="media/icons/localizacion.webp"></img>
+                  <ap class="text-lg font-normal tracking-tight text-white sm:text-md">Guadalajara, Jalisco, México.</p>
+                </li>
+              </ul>
+            </div>
+            <!-- Formulario de contacto -->
+            <div class="flex flex-1 flex-col bg-gray-900 items-center gap-12 rounded-2xl px-6 py-12 shadow lg:py-16">
+              <h2 class="text-2xl font-semibold items-start text-white md:text-2xl lg:max-w-none">Formulario de Contacto</h2>
+              <form id="contactForm" class="w-full max-w-md">
+                <div class="mb-4">
+                  <label for="nombre" class="block text-white text-sm font-semibold mb-2">Nombre:</label>
+                  <input type="text" id="nombre" name="nombre" class="block w-full bg-slate-100 border-0 px-3 py-2 rounded-md px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6 focus:ring-2 focus:ring-inset focus:ring-gray-600" placeholder="Ricardo Sanchez" required>
+                </div>
+                <div class="mb-4">
+                  <label for="compania" class="block text-white text-sm font-semibold mb-2">Compañía:</label>
+                  <input type="text" id="compania" name="compania" class="block w-full bg-slate-100 border-0 px-3 py-2 rounded-md px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6 focus:ring-2 focus:ring-inset focus:ring-gray-600" placeholder="Refacciones de Occidente" required>
+                </div>
+                <div class="mb-4">
+                  <label for="telefono" class="block text-white text-sm font-semibold mb-2">Teléfono:</label>
+                  <input type="text" id="telefono" name="telefono" class="block w-full bg-slate-100 border-0 px-3 py-2 rounded-md px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6 focus:ring-2 focus:ring-inset focus:ring-gray-600" placeholder="1234567890" required>
+                </div>
+                <div class="mb-4">
+                  <label for="email" class="block text-white text-sm font-semibold mb-2">Correo Electrónico:</label>
+                  <input type="email" id="email" name="email" class="block w-full bg-slate-100 border-0 px-3 py-2 rounded-md px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6 focus:ring-2 focus:ring-inset focus:ring-gray-600" placeholder="usuario@dominio.com" required>
+                </div>
+                <div class="mb-4">
+                  <label for="mensaje" class="block text-white text-sm font-semibold mb-2">Mensaje:</label>
+                  <textarea id="mensaje" name="mensaje" rows="2" class="block w-full bg-slate-100 border-0 px-3 py-2 rounded-md px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6 focus:ring-2 focus:ring-inset focus:ring-gray-600" ></textarea>
+                </div>
+                <button type="submit" class="mt-4 w-full block rounded-lg group inline-flex items-center justify-center whitespace-nowrap px-3.5 py-2.5 text-center text-sm font-semibold disabled:cursor-not-allowed bg-transparent border-2 border-white text-white hover:bg-white hover:text-black h-[42px] min-w-[42px] gap-2 disabled:bg-slate-100 disabled:stroke-slate-400 disabled:text-slate-400 disabled:hover:bg-slate-100 stroke-white px-6">¡Quiero que me contacten!</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-b from-gray-800 to-black w-full z-50">
+    <div class="mx-auto pb-10 max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="pt-16 flex w-full flex-col gap-12 lg:mb-10 lg:flex-row lg:gap-20">
+        <div class="flex flex-col items-center gap-6 text-center lg:items-start lg:text-left 2xl:grow">
+          <a href="#inicio" class="flex-shrink-0">
+            <img src="media/images/logogennawhite.webp" style="width: 100px; height: 10px;" class="h-8 w-auto">
+          </a>
+          <p class="max-w-xs text-sm text-slate-200">Tranformando ideas en sistemas únicos.</p>
+
+          <div class="flex justify-center space-x-4 py-2">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/gennasystems" target="_blank" class="text-white hover:text-gray-300 transition duration-300">
+              <img src="media/icons/facebook.webp"></img>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/genna.systems?igsh=MWlvY3AydmQxdTBueA%3D%3D&utm_source=qr" target="_blank" class="text-white hover:text-gray-300 transition duration-300">
+              <img src="media/icons/instagram.webp"></img>
+            </a>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/523330331797" target="_blank" class="text-white hover:text-gray-300 transition duration-300">
+              <img src="media/icons/whatsapp.webp"></img>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div role="separator" class="bg-slate-600 my-4 w-full h-[1px]"></div>
+      <div class="flex w-full flex-col-reverse items-center gap-6 text-center lg:flex-row lg:justify-between lg:gap-0 lg:text-center">
+        <p class="text-slate-200 text-sm">&copy; 2025 Genna Systems. Todos los derechos reservados.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuButton = document.getElementById("mobile-menu-button");
+      const menu = document.getElementById("mobile-menu");
+      const menuIconOpen = document.getElementById("menu-icon-open");
+      const menuIconClose = document.getElementById("menu-icon-close");
+
+      menuButton.addEventListener("click", () => {
+        const isMenuOpen = menu.classList.contains("block");
+        if (isMenuOpen) {
+          menu.classList.add("hidden");
+          menu.classList.remove("block");
+          menuIconOpen.classList.remove("hidden");
+          menuIconClose.classList.add("hidden");
+        } else {
+          menu.classList.remove("hidden");
+          menu.classList.add("block");
+          menuIconOpen.classList.add("hidden");
+          menuIconClose.classList.remove("hidden");
+        }
+      });
+    });
+  </script>
+
+  <script type="module">
+    import { createClient } from "@supabase/supabase-js";
+    // Supabase configuration
+    const SUPABASE_URL = "https://evnqrfkcmklxrhjzudmx.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV2bnFyZmtjbWtseHJoanp1ZG14Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzY0NjIxMjQsImV4cCI6MjA1MjAzODEyNH0.Sgezthi6h9KhlxJeaCcSKcepeNn_2qAG6S5aUz5_zbA";
+
+    // Initialize Supabase client
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // Handle form submission
+    document.getElementById("contactForm").addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      // Collect form data
+      const nombre = document.getElementById("nombre").value;
+      const compania = document.getElementById("compania").value;
+      const telefono = document.getElementById("telefono").value;
+      const mail = document.getElementById("email").value;
+      const mensaje = document.getElementById("mensaje").value;
+
+      // Insert data into Supabase
+
+      const { data, error } = await supabase
+        .from('form_data')
+        .insert([
+          { name: 'nombre', company: 'compania', phone: 'telefono', email: 'mail', message: 'mensaje' },
+        ])
+        .select()
+
+      if (error) {
+        console.error("Error inserting data:", error);
+        alert("Error sending message. Please try again.");
+      } else {
+        alert("Message sent successfully!");
+        document.getElementById("contactForm").reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
+
