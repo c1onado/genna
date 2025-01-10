@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Genna - Desarrollo web</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc9rrMqAAAAAIzVsW3677sfxAjUEsDV8WY7Bgyf"></script>
   <link rel="icon" type="image/x-icon" href="media/images/favicongenna.webp">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
@@ -249,6 +250,7 @@
                   <label for="mensaje" class="block text-white text-sm font-semibold mb-2">Mensaje:</label>
                   <textarea id="mensaje" name="mensaje" rows="2" class="block w-full bg-slate-100 border-0 px-3 py-2 rounded-md px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6 focus:ring-2 focus:ring-inset focus:ring-gray-600" ></textarea>
                 </div>
+                <div class="g-recaptcha" data-sitekey="6Lc9rrMqAAAAAIzVsW3677sfxAjUEsDV8WY7Bgyf"></div>
                 <button type="submit" class="mt-4 w-full block rounded-lg group inline-flex items-center justify-center whitespace-nowrap px-3.5 py-2.5 text-center text-sm font-semibold disabled:cursor-not-allowed bg-transparent border-2 border-white text-white hover:bg-white hover:text-black h-[42px] min-w-[42px] gap-2 disabled:bg-slate-100 disabled:stroke-slate-400 disabled:text-slate-400 disabled:hover:bg-slate-100 stroke-white px-6">¡Quiero que me contacten!</button>
               </form>
             </div>
@@ -326,6 +328,8 @@
     // Initialize Supabase client
     const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+    const RECAPTCHA_SITE_KEY = '6Lc9rrMqAAAAAIzVsW3677sfxAjUEsDV8WY7Bgyf';
+
     // Handle form submission
     document.getElementById("contactForm").addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -336,6 +340,9 @@
         const telefono = document.getElementById("telefono").value;
         const mail = document.getElementById("email").value;
         const mensaje = document.getElementById("mensaje").value;
+
+        grecaptcha.ready(async () => {
+        const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit' });
 
         try {
             // Insert data into Supabase
@@ -348,6 +355,7 @@
                         phone: telefono,
                         email: mail,
                         message: mensaje,
+                        recaptcha_token: token,
                     },
                 ]);
 
