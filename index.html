@@ -331,18 +331,18 @@
       event.preventDefault();
 
       // Collect form data
-      const nombre = document.getElementById("nombre").value;
-      const compania = document.getElementById("compania").value;
-      const telefono = document.getElementById("telefono").value;
-      const mail = document.getElementById("email").value;
-      const mensaje = document.getElementById("mensaje").value;
+      const name = document.getElementById("nombre").value;
+      const company = document.getElementById("compania").value;
+      const phone = document.getElementById("telefono").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("mensaje").value;
 
       // Insert data into Supabase
 
       const { data, error } = await supabase
         .from('form_data')
         .insert([
-          { name: 'nombre', company: 'compania', phone: 'telefono', email: 'mail', message: 'mensaje' },
+          { name, company, phone, email, message },
         ])
         .select()
 
