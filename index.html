@@ -345,14 +345,6 @@
           { name, company, phone, email, message },
         ])
         .select()
-
-      if (error) {
-        console.error("Error inserting data:", error);
-        alert("Error sending message. Please try again.");
-      } else {
-        alert("Message sent successfully!");
-        document.getElementById("contactForm").reset();
-      }
     });
   </script>
 
