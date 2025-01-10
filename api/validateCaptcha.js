@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Falta el token de reCAPTCHA" });
   }
 
-  const secretKey = "TU_SECRET_KEY"; // Reemplaza con tu clave secreta de reCAPTCHA
+  const secretKey = "6Lc9rrMqAAAAAIzVsW3677sfxAjUEsDV8WY7Bgyf"; 
 
   try {
     const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
