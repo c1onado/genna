@@ -1,32 +1,27 @@
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Método no permitido" });
-  }
+// Ejemplo con Node.js
+const express = require("express");
+const fetch = require("node-fetch");
 
+const app = express();
+app.use(express.json());
+
+app.post("/validate-captcha", async (req, res) => {
   const { token } = req.body;
 
-  if (!token) {
-    return res.status(400).json({ error: "Falta el token de reCAPTCHA" });
-  }
+  const secretKey = "TU_SECRET_KEY";
+  const response = await fetch(`https://challenges.cloudflare.com/turnstile/v0/siteverify`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      secret: secretKey,
+      response: token
+    })
+  });
 
-  const secretKey = "6Lc9rrMqAAAAAIzVsW3677sfxAjUEsDV8WY7Bgyf"; 
+  const data = await response.json();
+  res.json(data);
+});
 
-  try {
-    const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `secret=${secretKey}&response=${token}`,
-    });
+app.listen(3000, () => console.log("Server running on port 3000"));
 
-    const data = await response.json();
-
-    if (data.success) {
-      res.status(200).json({ success: true });
-    } else {
-      res.status(400).json({ success: false, error: "CAPTCHA inválido" });
-    }
-  } catch (error) {
-    res.status(500).json({ error: "Error del servidor" });
-  }
-}
 
