@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Genna - Desarrollo web</title>
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc9rrMqAAAAAIzVsW3677sfxAjUEsDV8WY7Bgyf"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <link rel="icon" type="image/x-icon" href="media/images/favicongenna.webp">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
@@ -322,65 +322,60 @@
   </script>
 
   <script type="module">
-  import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-
-  // Configuración de Supabase
-  const SUPABASE_URL = "https://evnqrfkcmklxrhjzudmx.supabase.co";
-  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV2bnFyZmtjbWtseHJoanp1ZG14Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzY0NjIxMjQsImV4cCI6MjA1MjAzODEyNH0.Sgezthi6h9KhlxJeaCcSKcepeNn_2qAG6S5aUz5_zbA";
-  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
   document.getElementById("contactForm").addEventListener("submit", async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    // Capturar datos del formulario
-    const nombre = document.getElementById("nombre").value;
-    const compania = document.getElementById("compania").value;
-    const telefono = document.getElementById("telefono").value;
-    const mail = document.getElementById("email").value;
-    const mensaje = document.getElementById("mensaje").value;
+  // Capturar datos del formulario
+  const nombre = document.getElementById("nombre").value;
+  const compania = document.getElementById("compania").value;
+  const telefono = document.getElementById("telefono").value;
+  const mail = document.getElementById("email").value;
+  const mensaje = document.getElementById("mensaje").value;
 
-    // Obtener token de reCAPTCHA
-    const recaptchaToken = grecaptcha.getResponse();
+  // Capturar token del CAPTCHA
+  const captchaToken = document.querySelector('.cf-turnstile iframe').dataset.token;
 
-    if (!recaptchaToken) {
-      alert("Por favor, completa el CAPTCHA.");
+  if (!captchaToken) {
+    alert("Por favor, completa el CAPTCHA.");
+    return;
+  }
+
+  try {
+    // Validar el CAPTCHA
+    const captchaResponse = await fetch("https://genna.vercel.app/validateCaptcha", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ token: captchaToken })
+    });
+
+    const captchaResult = await captchaResponse.json();
+    if (!captchaResult.success) {
+      alert("Validación del CAPTCHA fallida. Intenta nuevamente.");
       return;
     }
 
-    try {
-      // Verificar token de reCAPTCHA con tu backend en Vercel
-      const recaptchaResponse = await fetch("/api/validateCaptcha", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token: recaptchaToken }),
-      });
+    // Insertar datos en Supabase
+    const { data, error } = await supabase
+      .from("form_data")
+      .insert([{ name: nombre, company: compania, phone: telefono, email: mail, message: mensaje }]);
 
-      const recaptchaResult = await recaptchaResponse.json();
-
-      if (!recaptchaResult.success) {
-        alert("CAPTCHA inválido. Intenta de nuevo.");
-        return;
-      }
-
-      // Insertar datos en Supabase
-      const { data, error } = await supabase
-        .from("form_data")
-        .insert([{ name: nombre, company: compania, phone: telefono, email: mail, message: mensaje }]);
-
-      if (error) {
-        console.error("Error al insertar datos:", error);
-        alert("Ocurrió un error al enviar los datos. Intenta de nuevo.");
-      } else {
-        console.log("Datos insertados correctamente:", data);
-        alert("Formulario enviado con éxito. ¡Gracias!");
-        document.getElementById("contactForm").reset(); // Limpia el formulario
-        grecaptcha.reset(); // Reinicia el CAPTCHA
-      }
-    } catch (error) {
-      console.error("Error inesperado:", error);
-      alert("Ocurrió un error inesperado. Intenta más tarde.");
+    if (error) {
+      console.error("Error al insertar datos:", error);
+      alert("Ocurrió un error al enviar los datos. Intenta de nuevo.");
+    } else {
+      console.log("Datos insertados correctamente:", data);
+      alert("Formulario enviado con éxito. ¡Gracias!");
+      document.getElementById("contactForm").reset(); // Limpia el formulario
+      grecaptcha.reset(); // Reinicia el CAPTCHA
     }
-  });
+  } catch (error) {
+    console.error("Error inesperado:", error);
+    alert("Ocurrió un error inesperado. Intenta más tarde.");
+  }
+});
+
 </script>
 
 
