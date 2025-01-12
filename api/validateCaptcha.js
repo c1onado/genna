@@ -5,7 +5,7 @@ const fetch = require("node-fetch");
 const app = express();
 app.use(express.json());
 
-app.post("/validate-captcha", async (req, res) => {
+app.post("/validateCaptcha", async (req, res) => {
   const { token } = req.body;
 
   const secretKey = "TU_SECRET_KEY";
